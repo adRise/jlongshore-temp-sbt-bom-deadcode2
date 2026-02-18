@@ -9,7 +9,7 @@ on:
       - '**'
 
 jobs:
-  release:
+  build:
     runs-on: codebuild-adrise-github-runner-${{ github.run_id }}-${{ github.run_attempt }} image:ubuntu-7.0 instance-size:large
     steps:
       - name: Dump GitHub context
@@ -34,7 +34,7 @@ jobs:
 
       - name: Generate artifact
         run: |
-          sbt clean compile test codeArtifactPublish
+          sbt clean compile test
         env:
           ADRISE_INFRA: "true"
           AKKA_TEST_FACTOR: 10.0
