@@ -4,6 +4,16 @@
 
 # HERE SBT BOM plugin
 
+## AdRise Fork
+
+This is an AdRise fork of the upstream repository. To publish, manually bump version.sbt and commit it via
+a PR to master, alongside the rest of your changes. Then, run the GitHub Actions `Release` task. JARs will
+then be published to the new AdRise infrastructure.
+
+Suggestion for version number: loosely follow semantic versioning with an adrise-specific prerelease suffix. For
+example, the current version is based on upstream's 1.0.16, so we published the library (with our required changes) as
+1.0.17-adrise1, indicating it is the first AdRise prelease version.
+
 ## Introduction
 The HERE platform SBT BOM plugin provides a way to use Maven [BOM (bill of materials)](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms) in SBT projects.
 The plugin features importing multiple BOM files to use as a source of dependency versions, automatically processing parent and dependent BOMs.
